@@ -1,0 +1,135 @@
+/* ============================================================
+   LÚMINA — Estética a Laser
+   Design Tokens (fonte única de verdade implementável)
+   trace_id: f1e41f7e-e944-42cb-98c6-46e3277c1960
+   As cores aqui são IDÊNTICAS às do brandbook.md
+   Consumível diretamente: @import "styles/tokens.css";
+   ============================================================ */
+
+:root {
+  /* ---------- COR — marca ---------- */
+  --color-primary:        #2B3A3A; /* Petróleo Sereno */
+  --color-primary-deep:   #1B2727; /* Petróleo Profundo */
+  --color-foreground:     #23292B; /* Grafite Tinta (texto sobre claro) */
+  --color-surface:        #F7F3EC; /* Champagne Névoa (fundo base) */
+  --color-surface-2:      #EFE7DA; /* Areia Clara (superfícies elevadas) */
+  --color-accent:         #C9A86A; /* Dourado Champagne — acento de assinatura */
+  --color-accent-strong:  #B8924E; /* Âmbar Quente — acento em texto/ícone (AA) */
+  --color-secondary:      #7E948C; /* Eucalipto Suave — acento de apoio */
+
+  /* ---------- COR — neutros de estrutura ---------- */
+  --color-quartz:         #D9CFC2; /* bordas, divisores */
+  --color-muted:          #6A7375; /* texto secundário */
+  --color-on-dark:        #F4EFE7; /* Marfim — texto sobre escuro (nunca branco puro) */
+
+  /* ---------- COR — semântica (uso <=2%) ---------- */
+  --color-success:        #5E8C73;
+  --color-warning:        #C99A3C;
+  --color-error:          #B5654A;
+
+  /* ---------- COR — alias funcionais ---------- */
+  --color-border:         var(--color-quartz);
+  --color-bg:             var(--color-surface);
+  --color-text:           var(--color-foreground);
+  --color-text-muted:     var(--color-muted);
+  --color-link:           var(--color-accent-strong);
+
+  /* RGB utilitários (para rgba()) */
+  --rgb-accent:           201, 168, 106;
+  --rgb-primary:          43, 58, 58;
+  --rgb-surface:          247, 243, 236;
+
+  /* ---------- GRADIENTES / texturas ---------- */
+  --gradient-light:       linear-gradient(160deg, #F7F3EC 0%, #F1E7D4 60%, #E9D9BA 100%);
+  --gradient-dark:        linear-gradient(160deg, #2B3A3A 0%, #1B2727 100%);
+  --halo-gold:            radial-gradient(circle at 70% 30%, rgba(201,168,106,0.18), transparent 60%);
+
+  /* ---------- TIPOGRAFIA — famílias ---------- */
+  --font-display: 'Fraunces', 'Times New Roman', Georgia, serif;
+  --font-body:    'Figtree', 'Helvetica Neue', Arial, system-ui, sans-serif;
+
+  /* ---------- TIPOGRAFIA — escala fluida (clamp) ---------- */
+  --fs-display:  clamp(2.75rem, 6vw, 5.5rem);
+  --fs-h1:       clamp(2.25rem, 4.5vw, 3.75rem);
+  --fs-h2:       clamp(1.75rem, 3vw, 2.75rem);
+  --fs-h3:       clamp(1.25rem, 2vw, 1.75rem);
+  --fs-body-l:   clamp(1.0625rem, 1vw, 1.1875rem);
+  --fs-body:     clamp(1rem, 0.6vw, 1.0625rem);
+  --fs-caption:  clamp(0.8125rem, 0.4vw, 0.875rem);
+  --fs-overline: 0.75rem;
+
+  /* ---------- TIPOGRAFIA — pesos / line-height / tracking ---------- */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-body: 1.65;
+
+  --tracking-tight: -0.01em;
+  --tracking-wide: 0.08em;
+  --tracking-overline: 0.14em;
+
+  /* ---------- ESPAÇAMENTO (escala 8px) ---------- */
+  --space-3xs: 0.25rem;  /* 4 */
+  --space-2xs: 0.5rem;   /* 8 */
+  --space-xs:  0.75rem;  /* 12 */
+  --space-sm:  1rem;     /* 16 */
+  --space-md:  1.5rem;   /* 24 */
+  --space-lg:  2rem;     /* 32 */
+  --space-xl:  3rem;     /* 48 */
+  --space-2xl: 4rem;     /* 64 */
+  --space-3xl: 6rem;     /* 96 */
+  --space-section: clamp(5rem, 10vw, 9rem); /* ritmo vertical de seção */
+
+  /* ---------- LAYOUT ---------- */
+  --container-max: 1240px;
+  --measure: 68ch;       /* medida ideal de leitura */
+  --gutter: clamp(1.25rem, 5vw, 6rem);
+
+  /* ---------- RAIOS ---------- */
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   24px;
+  --radius-xl:   36px;
+  --radius-pill: 999px;
+  --radius-round: 50%;
+
+  /* ---------- SOMBRAS (suaves, quentes) ---------- */
+  --shadow-xs: 0 1px 2px rgba(27, 39, 39, 0.05);
+  --shadow-sm: 0 2px 8px rgba(27, 39, 39, 0.06);
+  --shadow-md: 0 10px 30px rgba(27, 39, 39, 0.08);
+  --shadow-lg: 0 24px 60px rgba(27, 39, 39, 0.12);
+  --shadow-gold: 0 12px 40px rgba(201, 168, 106, 0.22);
+  --shadow-inset: inset 0 0 0 1px rgba(217, 207, 194, 0.6);
+
+  /* ---------- MOTION / EASING ---------- */
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);   /* easing premium principal */
+  --ease-in-out:    cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-soft:      cubic-bezier(0.33, 1, 0.68, 1);
+
+  --dur-fast:   180ms;
+  --dur-base:   320ms;
+  --dur-slow:   560ms;
+  --dur-reveal: 800ms;
+
+  /* ---------- Z-INDEX ---------- */
+  --z-base: 1;
+  --z-header: 100;
+  --z-overlay: 500;
+  --z-modal: 1000;
+}
+
+/* Acessibilidade: desliga animações conforme preferência do usuário */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+    --dur-reveal: 0ms;
+  }
+}
